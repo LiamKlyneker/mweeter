@@ -10,7 +10,7 @@ dependencies:
     version: registry.npmjs.org/@clerk/nextjs@4.21.3(next@13.4.6)(react-dom@18.2.0)(react@18.2.0)
   '@supabase/supabase-js':
     specifier: ^2.25.0
-    version: registry.npmjs.org/@supabase/supabase-js@2.25.0
+    version: registry.npmjs.org/@supabase/supabase-js@2.25.0(encoding@0.1.13)
   '@types/node':
     specifier: 20.3.1
     version: registry.npmjs.org/@types/node@20.3.1
@@ -56,6 +56,11 @@ dependencies:
   typescript:
     specifier: 5.1.3
     version: registry.npmjs.org/typescript@5.1.3
+
+devDependencies:
+  encoding:
+    specifier: ^0.1.13
+    version: registry.npmjs.org/encoding@0.1.13
 
 packages:
 
@@ -478,32 +483,35 @@ packages:
     version: 1.3.2
     dev: false
 
-  registry.npmjs.org/@supabase/functions-js@2.1.2:
+  registry.npmjs.org/@supabase/functions-js@2.1.2(encoding@0.1.13):
     resolution: {integrity: sha512-QCR6pwJs9exCl37bmpMisUd6mf+0SUBJ6mUpiAjEkSJ/+xW8TCuO14bvkWHADd5hElJK9MxNlMQXxSA4DRz9nQ==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.1.2.tgz}
+    id: registry.npmjs.org/@supabase/functions-js/2.1.2
     name: '@supabase/functions-js'
     version: 2.1.2
     dependencies:
-      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6
+      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  registry.npmjs.org/@supabase/gotrue-js@2.31.0:
+  registry.npmjs.org/@supabase/gotrue-js@2.31.0(encoding@0.1.13):
     resolution: {integrity: sha512-YcwlbbNfedlue/HVIXtYBb4fuOrs29gNOTl6AmyxPp4zryRxzFvslVN9kmLDBRUAVU9fnPJh2bgOR3chRjJX5w==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/@supabase/gotrue-js/-/gotrue-js-2.31.0.tgz}
+    id: registry.npmjs.org/@supabase/gotrue-js/2.31.0
     name: '@supabase/gotrue-js'
     version: 2.31.0
     dependencies:
-      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6
+      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  registry.npmjs.org/@supabase/postgrest-js@1.7.1:
+  registry.npmjs.org/@supabase/postgrest-js@1.7.1(encoding@0.1.13):
     resolution: {integrity: sha512-xPRYLaZrkLbXNlzmHW6Wtf9hmcBLjjI5xUz2zj8oE2hgXGaYoZBBkpN9bmW9i17Z1f6Ujxa942AqK439XOA36A==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-1.7.1.tgz}
+    id: registry.npmjs.org/@supabase/postgrest-js/1.7.1
     name: '@supabase/postgrest-js'
     version: 1.7.1
     dependencies:
-      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6
+      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -520,27 +528,29 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmjs.org/@supabase/storage-js@2.5.1:
+  registry.npmjs.org/@supabase/storage-js@2.5.1(encoding@0.1.13):
     resolution: {integrity: sha512-nkR0fQA9ScAtIKA3vNoPEqbZv1k5B5HVRYEvRWdlP6mUpFphM9TwPL2jZ/ztNGMTG5xT6SrHr+H7Ykz8qzbhjw==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.5.1.tgz}
+    id: registry.npmjs.org/@supabase/storage-js/2.5.1
     name: '@supabase/storage-js'
     version: 2.5.1
     dependencies:
-      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6
+      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  registry.npmjs.org/@supabase/supabase-js@2.25.0:
+  registry.npmjs.org/@supabase/supabase-js@2.25.0(encoding@0.1.13):
     resolution: {integrity: sha512-AEh0suSrjfpQCOhY7hLsgX6gr8XEUWshVkTq9IODiHTnAR6NHiEQ865LTeWu8gqCDf2XH1n20JcSmovIe3Xixw==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.25.0.tgz}
+    id: registry.npmjs.org/@supabase/supabase-js/2.25.0
     name: '@supabase/supabase-js'
     version: 2.25.0
     dependencies:
-      '@supabase/functions-js': registry.npmjs.org/@supabase/functions-js@2.1.2
-      '@supabase/gotrue-js': registry.npmjs.org/@supabase/gotrue-js@2.31.0
-      '@supabase/postgrest-js': registry.npmjs.org/@supabase/postgrest-js@1.7.1
+      '@supabase/functions-js': registry.npmjs.org/@supabase/functions-js@2.1.2(encoding@0.1.13)
+      '@supabase/gotrue-js': registry.npmjs.org/@supabase/gotrue-js@2.31.0(encoding@0.1.13)
+      '@supabase/postgrest-js': registry.npmjs.org/@supabase/postgrest-js@1.7.1(encoding@0.1.13)
       '@supabase/realtime-js': registry.npmjs.org/@supabase/realtime-js@2.7.3
-      '@supabase/storage-js': registry.npmjs.org/@supabase/storage-js@2.5.1
-      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6
+      '@supabase/storage-js': registry.npmjs.org/@supabase/storage-js@2.5.1(encoding@0.1.13)
+      cross-fetch: registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -1242,12 +1252,13 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  registry.npmjs.org/cross-fetch@3.1.6:
+  registry.npmjs.org/cross-fetch@3.1.6(encoding@0.1.13):
     resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.6.tgz}
+    id: registry.npmjs.org/cross-fetch/3.1.6
     name: cross-fetch
     version: 3.1.6
     dependencies:
-      node-fetch: registry.npmjs.org/node-fetch@2.6.11
+      node-fetch: registry.npmjs.org/node-fetch@2.6.11(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -1463,6 +1474,13 @@ packages:
     name: emoji-regex
     version: 9.2.2
     dev: false
+
+  registry.npmjs.org/encoding@0.1.13:
+    resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/encoding/-/encoding-0.1.13.tgz}
+    name: encoding
+    version: 0.1.13
+    dependencies:
+      iconv-lite: registry.npmjs.org/iconv-lite@0.6.3
 
   registry.npmjs.org/enhanced-resolve@5.15.0:
     resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz}
@@ -2325,6 +2343,14 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: false
 
+  registry.npmjs.org/iconv-lite@0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz}
+    name: iconv-lite
+    version: 0.6.3
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: registry.npmjs.org/safer-buffer@2.1.2
+
   registry.npmjs.org/ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz}
     name: ignore
@@ -2921,8 +2947,9 @@ packages:
     version: 1.0.1
     dev: false
 
-  registry.npmjs.org/node-fetch@2.6.11:
+  registry.npmjs.org/node-fetch@2.6.11(encoding@0.1.13):
     resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.11.tgz}
+    id: registry.npmjs.org/node-fetch/2.6.11
     name: node-fetch
     version: 2.6.11
     engines: {node: 4.x || >=6.0.0}
@@ -2932,6 +2959,7 @@ packages:
       encoding:
         optional: true
     dependencies:
+      encoding: registry.npmjs.org/encoding@0.1.13
       whatwg-url: registry.npmjs.org/whatwg-url@5.0.0
     dev: false
 
@@ -3582,6 +3610,11 @@ packages:
       get-intrinsic: registry.npmjs.org/get-intrinsic@1.2.1
       is-regex: registry.npmjs.org/is-regex@1.1.4
     dev: false
+
+  registry.npmjs.org/safer-buffer@2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz}
+    name: safer-buffer
+    version: 2.1.2
 
   registry.npmjs.org/scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==, registry: https://npm-proxy.fury.io/kellerwilliams/, tarball: https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz}

@@ -2,7 +2,6 @@
 import Avatar from '@/ui/atoms/avatar';
 import TextArea from '@/ui/atoms/textarea';
 import Button from '@/ui/atoms/button';
-import { SignedIn } from '@clerk/nextjs';
 import useCreateTweet from '@/utils/db/tweet/createTweet';
 import { Tweet } from '@/utils/db/tweet/useFetchTweets';
 import { useState } from 'react';
@@ -27,22 +26,20 @@ export default function TweetForm(props: TweetFormProps) {
   };
 
   return (
-    <SignedIn>
-      <form onSubmit={handleOnSubmit} className="mb-10">
-        <div className="mb-4 flex gap-4">
-          <Avatar />
-          <TextArea
-            name="tweetText"
-            value={tweetText}
-            onChange={(e) => setTweetText(e.target.value)}
-          />
-        </div>
-        <footer className="flex justify-end">
-          <Button type="submit" disabled={isCreating}>
-            {isCreating ? 'Sending...' : 'Send mweet'}
-          </Button>
-        </footer>
-      </form>
-    </SignedIn>
+    <form onSubmit={handleOnSubmit} className="mb-10">
+      <div className="mb-4 flex gap-4">
+        <Avatar />
+        <TextArea
+          name="tweetText"
+          value={tweetText}
+          onChange={(e) => setTweetText(e.target.value)}
+        />
+      </div>
+      <footer className="flex justify-end">
+        <Button type="submit" disabled={isCreating}>
+          {isCreating ? 'Sending...' : 'Send mweet'}
+        </Button>
+      </footer>
+    </form>
   );
 }

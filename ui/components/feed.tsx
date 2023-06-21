@@ -4,6 +4,7 @@ import Tweet from "./tweet";
 import TweetForm from "@/ui/components/tweet-form";
 import Typography from "../atoms/typography";
 import { useUserContext } from "@/utils/user-provider";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Feed() {
   const user = useUserContext();
@@ -26,7 +27,15 @@ export default function Feed() {
 
   return (
     <>
-      <TweetForm onAddTweetSuccessfully={handleOnAddTweetSuccessfully} />
+      <SignedIn>
+        <TweetForm onAddTweetSuccessfully={handleOnAddTweetSuccessfully} />
+      </SignedIn>
+      <SignedOut>
+        <Typography>
+          Sign in and start mweeting! <br />
+          Also follow nice people to see their mweets.
+        </Typography>
+      </SignedOut>
       <div>
         {tweets.map((tweet) => (
           <Tweet
