@@ -18,10 +18,11 @@ export default function Nav() {
   return (
     <header className="sticky top-0 md:flex md:h-screen md:max-w-[260px] flex-1 grow md:justify-end border-r bg-slate-100 px-8 py-4">
       <figure
-        className="text-2xl font-bold text-sky-600 md:hidden"
+        className="text-2xl font-bold text-sky-600 flex items-center justify-between md:hidden"
         onClick={() => setNavActive(!navActive)}
       >
         mweeter
+        <small className="text-sm text-slate-500 font-normal">Toggle Menu</small>
       </figure>
 
       <span className="absolute right-full top-0 bg-slate-100 h-full w-[calc(50vw)] hidden md:block" />
