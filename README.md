@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mweeter, a Twitter clone made with NextJS 13, Supabase, TailwindCSS and Clerk
 
-## Getting Started
+## Demo
+You can see the project live here: [https://mweeter-beta.vercel.app/](https://mweeter-beta.vercel.app/)
 
-First, run the development server:
+Clone the project and run the following commands:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm i
+# then
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Details of the Project 🚀
+### Stack: 
+- NextJS 13
+- Supabase
+- TailwindCSS
+- Clerk (For Authentication)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### About the UI.
+The UI has these details that I want to mention:
+- **`ui/atoms` folder**: Smallest components, like buttons, inputs, typography etc.
+- **`ui/components` folder**: Bigger components, like the Navbar, the TweetForm, the Tiles etc. That uses the Atoms.
+- Routing using app folder with two layouts.
+- **Home Page**, or the Feed, where user can see only tweets of users that they follow or their own if they just added one in that moment.
+- **Follow Others Aside**, where the user can see **only** users that they can follow.
+- **Following Page**, where the user can see users that they already follow, from this page or the aside one users can perform follow/unfollow action.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Profile Page**, where the user can edit their profile information and also can see their own tweets.
 
-## Learn More
+### Supabase
+Tables involved:
+- `users`
+- `tweets`
+- `following`
 
-To learn more about Next.js, take a look at the following resources:
+Some custom Supabase functions that I implemented to fetch the data properly:
+- Get all tweets from people that I follow:
+```sql
+CREATE OR REPLACE FUNCTION get_mweets_from_following_rpc(current_user_id text) returns setof tweets as $$
+  select t.* from tweets AS t
+  JOIN following AS f ON t.user_id = f.following_user_id
+  WHERE f.user_id = current_user_id;
+$$
+LANGUAGE sql;
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Get all potential users that I can follow:
+```sql
+CREATE OR REPLACE FUNCTION get_users_not_followed_alter(current_user_id text) returns setof users as $$
+  SELECT u.* from users AS u
+  LEFT JOIN following AS f ON u.id = f.following_user_id AND f.user_id = current_user_id
+  WHERE f.following_user_id IS NULL;
+$$
+LANGUAGE sql;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Clerk as Auth Provider
+After a user creates an account with a username using clerk we are sending them to a `/welcome` page where we setup their profile in our database, this will help us to have fine control about the public profile and also to have better relations with other tables such as `tweets` and `following`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
