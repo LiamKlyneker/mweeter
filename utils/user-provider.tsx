@@ -8,8 +8,8 @@ import {
   useState,
 } from 'react';
 import { useRouter } from 'next/navigation';
-import { User } from './db/user/useFetchPotentialFollows';
 import { getSupabaseUser } from './db/user/utils';
+import { User } from './db/types';
 
 export const UserContext = createContext<User & { refreshUser: () => void }>(null!);
 export const UserConsumer = UserContext.Consumer;

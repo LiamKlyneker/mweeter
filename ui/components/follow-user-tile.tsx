@@ -9,12 +9,12 @@ type FollowUserTileProps = {
   userId: string;
   fullName: string;
   username: string;
-  avatar?: string;
+  avatar: string;
   following?: boolean;
 };
 
 export default function FollowUserTile(props: FollowUserTileProps) {
-  const { userId, fullName, username, following } = props;
+  const { userId, fullName, username, following, avatar } = props;
   const [localFollowing, setLocalFollowing] = useState(following);
   const { followUser, unfollowUser } = useFollowUser();
 
@@ -34,7 +34,7 @@ export default function FollowUserTile(props: FollowUserTileProps) {
 
   return (
     <article className="flex items-center gap-4 border-t py-4">
-      <Avatar />
+      <Avatar src={avatar} />
       <div className="flex-1">
         <Typography>{fullName}</Typography>
         <Typography>@{username}</Typography>

@@ -1,16 +1,6 @@
 import { useSession } from "@clerk/nextjs";
 import supabaseClient from "@/utils/supabase-client";
-
-export type ClerkUser = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  emailAddresses: {
-    emailAddress: string;
-  }[];
-  username: string;
-  profileImageUrl: string;
-};
+import { ClerkUser } from "../types";
 
 export default function useCreateUser() {
   const { session } = useSession();

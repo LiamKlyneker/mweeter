@@ -1,7 +1,7 @@
 import { useSession } from "@clerk/nextjs";
 import supabaseClient from "@/utils/supabase-client";
 import { useUserContext } from "@/utils/user-provider";
-import { User } from "./useFetchPotentialFollows";
+import { User } from "../types";
 
 export type ClerkUser = {
   id: string;

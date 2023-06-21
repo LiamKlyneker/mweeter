@@ -1,6 +1,6 @@
-import { ProfileInputs } from '@/app/(default-layout)/profile/page';
 import { ComponentPropsWithoutRef } from 'react';
 import { UseFormRegister } from 'react-hook-form';
+import { ProfileInputs } from './profile-form';
 
 type TextInputProps = ComponentPropsWithoutRef<'input'> & {
   register: UseFormRegister<ProfileInputs>;

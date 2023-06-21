@@ -4,7 +4,7 @@ import { useSession } from "@clerk/nextjs";
 import { useUserContext } from "@/utils/user-provider";
 import { Tweet } from "../types";
 
-export const useFetchTweets = () => {
+export const useFetchMyTweets = () => {
   const { session } = useSession();
   const [tweets, setTweets] = useState<Tweet[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +18,7 @@ export const useFetchTweets = () => {
       });
       const supabase = await supabaseClient(supabaseAccessToken as string);
       const { data: tweets } = await supabase
-        .rpc('get_mweets_from_following_rpc', { current_user_id: user.id })
+        .from('tweets')
         .select(
           `
           id,
@@ -33,6 +33,7 @@ export const useFetchTweets = () => {
           )
         `
         )
+        .eq('user_id', user?.id)
         .order('created_at', { ascending: false });
       setTweets(tweets as unknown as Tweet[] || []);
     } catch (e) {

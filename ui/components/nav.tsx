@@ -47,7 +47,7 @@ export default function Nav() {
         </ul>
         <SignedIn>
           <div className="flex items-center gap-2">
-            <Avatar />
+            <Avatar src={user?.avatar} />
             <div>
               <Typography>{user?.firstName} {user?.lastName}</Typography>
               <Typography>@{user?.username}</Typography>

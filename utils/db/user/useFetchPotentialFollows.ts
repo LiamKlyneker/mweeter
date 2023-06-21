@@ -2,15 +2,7 @@ import supabaseClient from "@/utils/supabase-client";
 import { useUserContext } from "@/utils/user-provider";
 import { useSession } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
-
-export type User = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  avatar: string;
-  primaryEmail: string;
-};
+import { User } from "../types";
 
 export default function useFetchPotentialFollows() {
   const { session } = useSession();

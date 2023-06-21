@@ -1,8 +1,8 @@
 import supabaseClient from "@/utils/supabase-client";
 import { useUserContext } from "@/utils/user-provider";
 import { useSession } from "@clerk/nextjs";
-import { Tweet } from "./useFetchTweets";
 import { useState } from "react";
+import { Tweet } from "../types";
 
 export default function useCreateTweet() {
   const { session } = useSession();

@@ -1,6 +1,6 @@
 'use client';
 import Typography from '@/ui/atoms/typography';
-import { SignedIn, useUser } from '@clerk/nextjs';
+import { SignedIn } from '@clerk/nextjs';
 import useFetchFollowing from '@/utils/db/user/useFetchFollowing';
 import FollowUserTile from '@/ui/components/follow-user-tile';
 
@@ -12,11 +12,13 @@ export default function FollowingPage() {
       <Typography variant="h1">People you follow</Typography>
 
       <div className="grid grid-cols-2 gap-x-10 mb-2">
-        {following.map((following: any) => (
+        {following.map((following) => (
           <FollowUserTile
             key={following.following_user_id.id}
             userId={following.following_user_id.id}
-            fullName={following.following_user_id.fullName}
+            fullName={
+              `${following.following_user_id.firstName} ${following.following_user_id.lastName}`
+            }
             username={following.following_user_id.username}
             avatar={following.following_user_id.avatar}
             following

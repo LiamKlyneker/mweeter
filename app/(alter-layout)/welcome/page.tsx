@@ -1,6 +1,7 @@
 'use client';
 import Typography from '@/ui/atoms/typography';
-import useCreateUser, { ClerkUser } from '@/utils/db/user/useCreateUser';
+import { ClerkUser } from '@/utils/db/types';
+import useCreateUser from '@/utils/db/user/useCreateUser';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
@@ -10,9 +11,9 @@ export default function WelcomePage() {
   const { createUser } = useCreateUser();
   const router = useRouter();
 
-  const addUserToSupabase = async (clerkUser: ClerkUser) => {
+  const addUserToSupabase = async () => {
     try {
-      await createUser(clerkUser);
+      await createUser(clerkUser as ClerkUser);
       router.push('/');
     } catch (e) {
       alert(e);
@@ -20,7 +21,8 @@ export default function WelcomePage() {
   };
 
   useEffect(() => {
-    addUserToSupabase(clerkUser as ClerkUser);
+    if (!clerkUser) return;
+    addUserToSupabase();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clerkUser]);
 
