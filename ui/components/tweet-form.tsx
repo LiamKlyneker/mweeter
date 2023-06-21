@@ -20,7 +20,7 @@ export default function TweetForm(props: TweetFormProps) {
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     tweetText.trim();
-    if (!tweetText) return;
+    if (!tweetText || tweetText.length > 280) return;
     
     const data = await createTweet(tweetText);
     onAddTweetSuccessfully(data as Tweet);
@@ -35,6 +35,7 @@ export default function TweetForm(props: TweetFormProps) {
           name="tweetText"
           value={tweetText}
           onChange={(e) => setTweetText(e.target.value)}
+          maxLength={280}
         />
       </div>
       <footer className="flex justify-end">

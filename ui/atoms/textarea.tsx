@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react';
 type TextAreaProps = ComponentPropsWithoutRef<'textarea'>;
 
 export default function TextArea(props: TextAreaProps) {
-  const { name, onChange, value } = props;
+  const { name, onChange, value, maxLength } = props;
 
   return (
     <textarea
@@ -11,6 +11,7 @@ export default function TextArea(props: TextAreaProps) {
       name={name}
       onChange={onChange}
       value={value}
+      maxLength={maxLength}
     />
   );
 }
