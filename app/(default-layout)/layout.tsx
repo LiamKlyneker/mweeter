@@ -22,7 +22,7 @@ export default function RootLayout(props: RootLayoutProps) {
       <UserProvider>
         <html lang="en">
           <body className={inter.className}>
-            <div className="mx-auto flex max-w-screen-xl">
+            <div className="mx-auto md:flex max-w-screen-xl">
               <Nav />
               <main className="flex-1 px-10 py-12">{children}</main>
             </div>

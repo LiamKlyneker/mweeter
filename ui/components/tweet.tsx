@@ -17,7 +17,7 @@ export default function Tweet(props: TweetProps) {
     <article className="mb-8 flex gap-4">
       <Avatar src={avatar} />
       <div>
-        <header className="mb-3 flex gap-3">
+        <header className="mb-3 flex flex-col md:flex-row gap-1 md:gap-3">
           <Typography className="font-semibold text-slate-900">
             {fullName}
           </Typography>
